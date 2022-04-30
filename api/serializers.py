@@ -9,3 +9,10 @@ class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
         exclude = ['user']
+
+
+class TodoCompleteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Todo
+        fields = ['id']
+        read_only_fields = ['__all__']
